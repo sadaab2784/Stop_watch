@@ -2,17 +2,22 @@ let [miliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
 let timeRef = document.querySelector('.timerDisplay');
 let int = null;
 
-//for start button
+// for start button
 document.getElementById('startTimer').addEventListener('click', () => {
     if (int !== null) {
         clearInterval(int);
     }
+
     int = setInterval(displayTimer, 10);
 });
 
+// for pause button
+document.getElementById('pauseTimer').addEventListener('click', () => {
+    clearInterval(int);
+});
 
 // for reset button
-document.getElementById('startTimer').addEventListener('click', () => {
+document.getElementById('resetTimer').addEventListener('click', () => {
     clearInterval(int);
     [miliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
     timeRef.innerHTML = '00 : 00 : 00 : 00'
@@ -20,7 +25,7 @@ document.getElementById('startTimer').addEventListener('click', () => {
 
 function displayTimer() {
     miliseconds += 10;
-    if(miliseconds == 1000) {
+    if (miliseconds == 1000) {
         miliseconds = 0;
         seconds++;
 
@@ -40,4 +45,5 @@ function displayTimer() {
     let s = seconds < 10 ? "0" + seconds : seconds;
     let ms = miliseconds < 10 ? "00" + miliseconds : miliseconds;
     timeRef.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;
+   
 }

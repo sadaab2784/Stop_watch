@@ -13,32 +13,27 @@
 
   <body>
 
-        <!-- heading container -->
-        <div id="heading">
-            <div id="heading-container">
-                <div id="logo"></div>
-                <h1>Stop Watch</h1>
+       <!-- main container -->
+        <div class="content">
+          <div class="container">
+
+            <!-- display the time -->
+            <div class="timerDisplay">
+              00 : 00 : 00 : 000
             </div>
-        </div>
 
-        <div class="container">
+            <!-- Control Buttons -->
+            <div class="buttonsConatainer">
+              <button id="pauseTimer">Pause</button>
+              <button id="startTimer">Start</button>
+              <button id="resetTimer">Reset</button>
+            </div>
 
-          <!-- display the time -->
-          <div class="timerDisplay">
-            00:00:00:000
           </div>
-
-          <!-- Control Buttons -->
-          <div class="buttonsConatainer">
-            <button id="pauseTimer">Pause</button>
-            <button id="startTimer">Start</button>
-            <button id="resetTimer">Reset</button>
-          </div>
-
         </div>
 
         <!-- link the javascript file -->
-        <script src="./index.js"></script>
+        <script src="index.js"></script>
 
   </body>
 </html>
